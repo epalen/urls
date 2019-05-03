@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>{{ config('app.name', 'Laravel URL Shortener') }}</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -27,7 +27,7 @@
             @endif
 
             <div class="content">
-                <h1 class="title">Shorten a URL</h1>
+                <h1 class="title">Laravel URL Shortener</h1>
 
                 @if($errors->has('url'))
                     <p>{{ $errors->first('url') }}</p>
@@ -42,7 +42,7 @@
                 @if(Session::has('global'))
                     <p>{{ Session::get('global') }}</p>
                     <input type="text" value="{{ Session::get('success') }}" id="myInput">
-                    <button onclick="myFunction()">Copy text</button>
+                    <button onclick="myFunction()">Copy short url</button>
                 @endif
             </div>
         </div>
@@ -51,7 +51,7 @@
               var copyText = document.getElementById("myInput");
               copyText.select();
               document.execCommand("copy");
-              alert("Copied the text: " + copyText.value);
+              alert("Short url copied: " + copyText.value);
             }
         </script>
     </body>

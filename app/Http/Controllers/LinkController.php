@@ -37,6 +37,8 @@ class LinkController extends Controller
 
                 $code = $exist->first()->code;
 
+                return redirect()->route('home.index')->with('global', 'This url ' . url($url) . ' is already taken, try again.');
+
             } else {
 
                 $created = Link::create([
@@ -56,9 +58,6 @@ class LinkController extends Controller
 
                 return redirect()->route('home.index')->with('global', 'All done! Here is your short URL: ' . url($code) . '')->with('success',''  . url($code) . '');
                 
-                //return Redirect::to('home.index')->with('global', 'All done! Here is your short URL: <a href="'. URL::action('get', $code) .'">' . URL::action('get', $code) . '</a>');
-                
-                //return Redirect::action('LinkController@index')->with('global', 'All done! Here is your short URL: <a href="'. URL::action('get', $code) .'">' . URL::action('get', $code) . '</a>');
             }
 
         }
@@ -71,8 +70,6 @@ class LinkController extends Controller
         $link = Link::where('code', '=', $code);
 
         if($link->count() === 1) {
-
-            //return redirect()->route($link->first()->home.index);
 
             return Redirect::to($link->first()->url);
             
