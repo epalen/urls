@@ -29,11 +29,9 @@
             <div class="content">
                 <h1 class="title">Laravel URL Shortener</h1>
 
-                @if($errors->has('url'))
-                    <p>{{ $errors->first('url') }}</p>
-                @endif
+                
 
-                {!! Form::open(array('action' => 'LinkController@make', 'method' => 'post')) !!}
+                {!! Form::open(array('action' => 'LinkController@makeUrl', 'method' => 'post')) !!}
                     {{ csrf_field() }}
                     <input type="url" name="url" placeholder="Enter a URL." autocomplete="off"{{ (Input::old('url')) ? ' value="' . e(Input::old('url')) . '"' : '' }}>
                     <input type="submit" value="Shorten">
@@ -41,14 +39,14 @@
                 <br>
                 @if(Session::has('global'))
                     <p>{{ Session::get('global') }}</p>
-                    <input type="text" value="{{ Session::get('success') }}" id="myInput">
-                    <button onclick="myFunction()">Copy short url</button>
+                    <input type="text" value="{{ Session::get('success') }}" id="copytextInput">
+                    <button onclick="copytextFunction()">Copy short url</button>
                 @endif
             </div>
         </div>
         <script>
-            function myFunction() {
-              var copyText = document.getElementById("myInput");
+            function copytextFunction() {
+              var copyText = document.getElementById("copytextInput");
               copyText.select();
               document.execCommand("copy");
               alert("Short url copied: " + copyText.value);

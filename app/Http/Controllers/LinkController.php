@@ -16,7 +16,7 @@ class LinkController extends Controller
         return view('welcome');
     }
 
-    public function make() {
+    public function makeUrl() {
 
         $validator = Validator::make(Input::all(), array(
             'url' => 'required|url|max:255'
@@ -31,26 +31,30 @@ class LinkController extends Controller
             $url = Input::get('url');
             $code = null;
 
-            $exist = Link::where('url', '=', $url);
+            $existUrl = Link::where('url', '=', $url);
 
-            if($exist->count() === 1) {
+            if($existUrl->count() === 1) {
 
-                $code = $exist->first()->code;
+                $code = $existUrl->first()->code;
 
                 return redirect()->route('home.index')->with('global', 'This url ' . url($url) . ' is already taken, try again.');
 
             } else {
 
                 $created = Link::create([
-                    'url'   => $url
+                    'url'   => $url,
+                    'hits'  => 0
                 ]);
 
                 if($created) {
                     $code = base_convert($created->id, 10, 36);
 
                     Link::where('id', '=', $created->id)->update([
-                        'code'  => $code
+                        'code'      => $code,
+                        'shorten'   => url($code)
                     ]);
+
+                    Link::find($created->id)->increment('hits');
                 }
             }
 
@@ -67,6 +71,7 @@ class LinkController extends Controller
     }
 
     public function get($code) {
+        
         $link = Link::where('code', '=', $code);
 
         if($link->count() === 1) {

@@ -19,7 +19,8 @@
                           <tr>
                             <th style="width: 2%">#</th>
                             <th style="width: 20%">Url</th>
-                            <th style="width: 20%">Code</th>
+                            <th style="width: 20%">Shorten</th>
+                            <th style="width: 20%">Hits</th>
                             <th style="width: 20%; text-align: center;">Registration date</th>
                           </tr>
                         </thead>
@@ -31,7 +32,10 @@
                                 {{ $urls->url }}
                               </td>
                               <td style="width: 20%">
-                                {{ $urls->code }}
+                                {{ $urls->shorten }}
+                              </td>
+                              <td style="width: 20%">
+                                {{ $urls->hits }}
                               </td>
                               <td style="width: 20%" align="center">
                                 {{ $urls->created_at->format('d M Y') }}

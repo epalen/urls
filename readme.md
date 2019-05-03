@@ -33,7 +33,7 @@ JSON PHP Extension
 BCMath PHP Extension
 ```
 
-### Instalación 🔧
+### Installation 🔧
 
 _1st - Download repository project by executing the following command:_
 
@@ -63,7 +63,7 @@ php artisan migrate --seed
 
 ## Deployment 📦
 
-_Agrega notas adicionales sobre como hacer deploy_
+_Pending_
 
 ## Built with 🛠️
 
@@ -86,9 +86,9 @@ You can find much more about how to use this project in our [Wiki](https://githu
 
 ## License 📄
 
-This project is under the License (Your License) - see the file [LICENSE.md](LICENSE.md) for details
+This project is under the License (MIT) - see the file [LICENSE.md](LICENSE.md) for details
 
-## Expresiones de Gratitud 🎁
+## Gratitude 🎁
 
 * Tell others about this project 📢
 * Invite a beer 🍺 someone from the team. 

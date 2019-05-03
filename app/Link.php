@@ -8,12 +8,13 @@ class Link extends Model
 {
     protected $table = 'links';
 
-    protected $fillable = ['url', 'code'];
+    protected $fillable = ['url', 'code', 'shorten', 'hits'];
 
     public function scopeSearch($query, $name)
     {
         return $query
             ->where('url', 'like', '%' .$name. '%')
-            ->orWhere('code', 'like', '%' .$name. '%');
+            ->orWhere('code', 'like', '%' .$name. '%')
+            ->orWhere('shorten', 'like', '%' .$name. '%');
     }
 }

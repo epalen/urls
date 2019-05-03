@@ -25,8 +25,8 @@ Route::get('/home', array(
 
 // Input Routes
 Route::post('/make', array(
-    'as'    =>  'make',
-    'uses'  =>  'LinkController@make'
+    'as'    =>  'makeUrl',
+    'uses'  =>  'LinkController@makeUrl'
 ));
 
 Route::get('/{code}', array(
