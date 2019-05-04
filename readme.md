@@ -79,15 +79,15 @@ _Using Postman we can perform tests using the POST, GET, PUT and DEL methods._
 
 _The routes available in the Api Routes:_
 
-_1st - //List Links Route::get('urls', 'LinkController@indexApi');_
+_1st - //List Links Route::get('urls', 'LinkController@indexApi');
 
-_2nd - //List single Link Route::get('url/{id}', 'LinkController@showApi');_
+_2nd - //List single Link Route::get('url/{id}', 'LinkController@showApi');
 
-_3rd - //Create new Link Route::post('url', 'LinkController@storeUrlapi');_
+_3rd - //Create new Link Route::post('url', 'LinkController@storeUrlapi');
 
-_4th - //Create update Link Route::put('url', 'LinkController@storeUrlapi');_
+_4th - //Create update Link Route::put('url', 'LinkController@storeUrlapi');
 
-_5th - //Delete Link Route::delete('url/{id}', 'LinkController@destroyApi');_
+_5th - //Delete Link Route::delete('url/{id}', 'LinkController@destroyApi');
 
 ## 🛠️ Built with 
 
