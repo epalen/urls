@@ -2,14 +2,14 @@
 
 _URL Shortener using Laravel is an open source web app with the functionality to shorten urls with a considerable amount of characters.._
 
-## Starting 🚀
+## 🚀 Starting 
 
 _These instructions will allow you to obtain a copy of the project in operation on your local machine for development and testing purposes._
 
 See **Deployment** to learn how to deploy the project.
 
 
-### Requirements 📋
+### 📋 Requirements 
 
 _What things do you need to install the software and how to install them?_
 
@@ -33,7 +33,7 @@ JSON PHP Extension
 BCMath PHP Extension
 ```
 
-### Installation 🔧
+### 🔧 Installation 
 
 _1st - Download repository project by executing the following command:_
 
@@ -61,11 +61,35 @@ _4th - Create .env file._
 php artisan migrate --seed
 ```
 
-## Deployment 📦
+## 💻 Functionalities and tests
 
-_Pending_
+_After the installation process, to perform the functionalities tests you must follow the following steps:_
 
-## Built with 🛠️
+_Visual tests:_
+
+_1st - Access to any browser with the path 'http: //urls.test'.
+
+_2nd - Enter url to be shortened in the input field, where it indicates enter a URL.
+
+_Access to Dashboard_
+
+_1st - Login placing the user admin@urls.com and password 123456.
+
+_Using Postman we can perform tests using the POST, GET, PUT and DEL methods._
+
+_The routes available in the Api Routes:_
+
+_1st - //List Links Route::get('urls', 'LinkController@indexApi');_
+
+_2nd - //List single Link Route::get('url/{id}', 'LinkController@showApi');_
+
+_3rd - //Create new Link Route::post('url', 'LinkController@storeUrlapi');_
+
+_4th - //Create update Link Route::put('url', 'LinkController@storeUrlapi');_
+
+_5th - //Delete Link Route::delete('url/{id}', 'LinkController@destroyApi');_
+
+## 🛠️ Built with 
 
 _Tools used in the development._
 
@@ -76,10 +100,6 @@ _Tools used in the development._
 
 Please read the [CONTRIBUTING.md] (https://gist.github.com/epalen/urls) for details of our code of conduct, and the process for sending us pull requests.
 
-## Wiki 📖
-
-You can find much more about how to use this project in our [Wiki](https://github.com/epalen/wiki)
-
 ## Authors ✒️
 
 * **Edward Palen** - *Initial Work* - [epalen](https://github.com/epalen)
@@ -87,14 +107,6 @@ You can find much more about how to use this project in our [Wiki](https://githu
 ## License 📄
 
 This project is under the License (MIT) - see the file [LICENSE.md](LICENSE.md) for details
-
-## Gratitude 🎁
-
-* Tell others about this project 📢
-* Invite a beer 🍺 someone from the team. 
-* Thanks publicly 🤓.
-* etc.
-
 
 
 ---
