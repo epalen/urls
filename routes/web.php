@@ -14,13 +14,13 @@
 Auth::routes();
 
 Route::get('/', array(
-    'as'    =>  'home.index',
-    'uses'  =>  'LinkController@index' 
+    'as'    =>  'home',
+    'uses'  =>  'HomeController@index' 
 ));
 
 Route::get('/home', array(
-    'as'    =>  'home',
-    'uses'  =>  'HomeController@index' 
+    'as'    =>  'home.index',
+    'uses'  =>  'LinkController@index' 
 ));
 
 // Input Routes

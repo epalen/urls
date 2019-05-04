@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">Dashboard</div>
 
@@ -18,26 +18,26 @@
                         <thead>
                           <tr>
                             <th style="width: 2%">#</th>
-                            <th style="width: 20%">Url</th>
+                            <th style="width: 55%">Url</th>
                             <th style="width: 20%">Shorten</th>
-                            <th style="width: 20%">Hits</th>
-                            <th style="width: 20%; text-align: center;">Registration date</th>
+                            <th style="width: 2%">Hits</th>
+                            <th style="width: 15%; text-align: center;">Registration date</th>
                           </tr>
                         </thead>
                         <tbody>
                           @foreach ($data as $key => $urls)
                             <tr>
                               <td style="width: 2%">{{ ++$i }}</td>
-                              <td style="width: 20%">
+                              <td style="width: 55%">
                                 {{ $urls->url }}
                               </td>
                               <td style="width: 20%">
                                 {{ $urls->shorten }}
                               </td>
-                              <td style="width: 20%">
+                              <td style="width: 2%">
                                 {{ $urls->hits }}
                               </td>
-                              <td style="width: 20%" align="center">
+                              <td style="width: 15%" align="center">
                                 {{ $urls->created_at->format('d M Y') }}
                               </td>
                             </tr>

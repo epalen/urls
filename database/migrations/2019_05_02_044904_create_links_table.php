@@ -22,7 +22,7 @@ class CreateLinksTable extends Migration
             $table->timestamps();
         });
 
-        DB::statement("ALTER TABLE links AUTO_INCREMENT = 100000000;");
+        //DB::statement("ALTER TABLE links AUTO_INCREMENT = 100000000;");
     }
 
     /**

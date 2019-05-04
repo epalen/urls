@@ -29,8 +29,6 @@
             <div class="content">
                 <h1 class="title">Laravel URL Shortener</h1>
 
-                
-
                 {!! Form::open(array('action' => 'LinkController@makeUrl', 'method' => 'post')) !!}
                     {{ csrf_field() }}
                     <input type="url" name="url" placeholder="Enter a URL." autocomplete="off"{{ (Input::old('url')) ? ' value="' . e(Input::old('url')) . '"' : '' }}>

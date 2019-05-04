@@ -17,10 +17,17 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('urls', 'LinkController@index');
+//List Links
+Route::get('urls', 'LinkController@indexApi');
 
-Route::post('/make', 'LinkController@makeUrl');
+//List single Link
+Route::get('url/{id}', 'LinkController@showApi');
 
-Route::get('/code', 'LinkController@get');
+//Create new Link
+Route::post('url', 'LinkController@storeUrlapi');
 
-Route::resource('shorten', 'LinkController');
+//Create update Link
+Route::put('url', 'LinkController@storeUrlapi');
+
+//Delete Link
+Route::delete('url/{id}', 'LinkController@destroyApi');
